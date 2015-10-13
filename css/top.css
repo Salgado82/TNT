@@ -33,6 +33,7 @@ html {
 
 .navbar-default .navbar-nav>li>a{
     color: #000;
+    letter-spacing: 1px;
 }
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
@@ -57,6 +58,10 @@ html {
 
     .top-nav-collapse {
         padding: 10px 0;
+    }
+
+    .navbar-nav>li{
+        padding-left: 15px;
     }
 }
 

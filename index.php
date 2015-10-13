@@ -63,9 +63,11 @@
           <div class="row">
             <div class="col-sm-6 col-md-6">
               <div class="thumbnail">
-                <img src="http://placehold.it/545x343">
-                <h3></h3>
+                <img src="http://placehold.it/545x343" width="480px">
+                <div class="col-md-offset-1 col-md-10">
+                <h3>HOLA</h3>
                   <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+              </div>
               </div>
             </div>
 
