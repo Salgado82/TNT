@@ -1,13 +1,10 @@
-#top{
-	
-	background-image: url(../img/top.png);
-    background-repeat: no-repeat;
-    background-position: center;	
+/*!
+ * Start Bootstrap - Scrolling Nav HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
 
-	min-height: 800px;
-}
-
-.navbar {
+ .navbar {
     margin-top: 40px;
     background-color: white;
 }
@@ -38,6 +35,16 @@
     border-bottom: 2px solid #000;
 }
 
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
@@ -54,6 +61,10 @@
         padding-left: 15px;
     }
 }
+
+/* Demo Sections - You can use these as guides or delete them - the scroller will work with any sort of height, fixed, undefined, or percentage based.
+The padding is very important to make sure the scrollspy picks up the right area when scrolled to. Adjust the margin and padding of sections and children 
+of those sections to manage the look and feel of the site. */
 
 .intro-section {
     height: 100%;
