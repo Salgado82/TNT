@@ -1,8 +1,10 @@
 #top{
 	
-	background-image: url(../img/top.png);	
+	background-image: url(../img/top.png);
+    background-repeat: no-repeat;
+    background-position: center;	
 
-	min-height: 70055px;
+	min-height: 800px;
 }
 
 body {
@@ -15,6 +17,36 @@ html {
     height: 100%;
 }
 
+.navbar {
+    margin-top: 40px;
+    background-color: white;
+}
+
+.navbar-header{
+    padding: 0px;
+    margin: -10px;
+}
+
+.navbar-brand{
+    padding: 0px 15px;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #000;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+    color: #000;
+    background-color: transparent;
+    border-bottom: 2px solid #000;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+    color: #000;
+    background-color: transparent;
+    border-bottom: 2px solid #000;
+}
+
 @media(min-width:767px) {
     .navbar {
         padding: 20px 0;
@@ -24,7 +56,7 @@ html {
     }
 
     .top-nav-collapse {
-        padding: 0;
+        padding: 10px 0;
     }
 }
 
