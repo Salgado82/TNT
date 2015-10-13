@@ -4,6 +4,9 @@
 	<!-- ARCHIVOS PROPIOS DEL CSS Y JS -->
 	<link rel="stylesheet" href="css/top.css">
 
+	<script src="utilidades/scroll/jquery.easing.min.js"></script>
+	<script src="js/scroll_menu.js"></script>
+
 </head>
 
 <body>
