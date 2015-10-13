@@ -3,6 +3,7 @@
 	
 	<!-- ARCHIVOS PROPIOS DEL CSS Y JS -->
 	<link rel="stylesheet" href="css/top.css">
+	<link  rel="stylesheet" href="css/carousel.css">
 
 	<script src="utilidades/scroll/jquery.easing.min.js"></script>
 	<script src="js/scroll_menu.js"></script>
@@ -47,6 +48,36 @@
 			</div>
 		</section>
 		<!-- /Top con menu -->
+
+		<form class="navbar-form navbar-left" role="search">
+		  <div class="form-group">
+		    <p class="navbar-text">NEWS</p>
+		  </div>
+		</form>
+
+		<!-- /Carousel -->
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <img class="first-slide" src="img/cactus.png" alt="First slide">
+		      <div class="container">
+		        <div class="carousel-caption">
+		          <h1>Example headline.</h1>
+		          <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+		  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+		<!-- /Carousel -->
 
 	</div>
 </div>
