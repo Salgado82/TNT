@@ -3,7 +3,7 @@
 	
 	<!-- ARCHIVOS PROPIOS DEL CSS Y JS -->
 	<link rel="stylesheet" href="css/top.css">
-	<link  rel="stylesheet" href="css/carousel.css">
+	<link  rel="stylesheet" href="css/carousel2.css">
 
 	<script src="utilidades/scroll/jquery.easing.min.js"></script>
 	<script src="js/scroll_menu.js"></script>
@@ -56,27 +56,78 @@
 		</form>
 
 		<!-- /Carousel -->
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
-		  <div class="carousel-inner" role="listbox">
-		    <div class="item active">
-		      <img class="first-slide" src="img/cactus.png" alt="First slide">
-		      <div class="container">
-		        <div class="carousel-caption">
-		          <h1>Example headline.</h1>
-		          <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-		        </div>
-		      </div>
-		    </div>
-		  </div>
-		  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		    <span class="sr-only">Previous</span>
-		  </a>
-		  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		    <span class="sr-only">Next</span>
-		  </a>
-		</div>
+		    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+     <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div class="thumbnail">
+                <img src="http://placehold.it/545x343">
+                <h3></h3>
+                  <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+              <div class="thumbnail">
+                <img src="http://placehold.it/545x343">
+                <h3></h3>
+                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div class="thumbnail">
+                <img src="http://placehold.it/545x343">
+                <h3></h3>
+                  <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+              <div class="thumbnail">
+                <img src="http://placehold.it/545x343">
+                <h3></h3>
+                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-sm-6 col-md-6">
+              <div class="thumbnail">
+                <img src="http://placehold.it/545x343">
+                <h3></h3>
+                  <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+              </div>
+            </div>
+
+            <div class="col-sm-6 col-md-6">
+              <div class="thumbnail">
+                <img src="http://placehold.it/545x343">
+                <h3></h3>
+                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
 		<!-- /Carousel -->
 
 	</div>
