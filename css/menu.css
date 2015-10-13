@@ -1,11 +1,4 @@
-#top{
-	
-	background-image: url(../img/top.png);
-    background-repeat: no-repeat;
-    background-position: center;	
-
-	min-height: 800px;
-}
+/*ESTILO DEL MENU*/
 
 .navbar {
     margin-top: 40px;
@@ -53,32 +46,4 @@
     .navbar-nav>li{
         padding-left: 15px;
     }
-}
-
-.intro-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #fff;
-}
-
-.about-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #eee;
-}
-
-.services-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #fff;
-}
-
-.contact-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #eee;
 }

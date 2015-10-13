@@ -1,0 +1,13 @@
+/*ESTILO DEL HOME*/
+
+.top-section {
+
+    background-image: url(../img/top.png);
+    background-repeat: no-repeat;
+    background-position: center;    
+
+    min-height: 700px;
+    padding-top: 180px;
+    text-align: center;
+    color: #FFF;
+}
