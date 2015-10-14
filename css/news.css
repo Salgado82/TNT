@@ -42,7 +42,8 @@ a.left.carousel-control {
   -moz-border-radius: 5px;
   border-radius: 5px;
   height: 52px;
-  margin: 270px 0 0 4px;
+  margin: 230px 0 0 4px;
+  margin-left: -45px;
   width: 52px;
 }
 
@@ -53,17 +54,19 @@ a.right.carousel-control {
   -moz-border-radius: 5px;
   border-radius: 5px;
   height: 52px;
-  margin: 270px 4px 0 0;
+  margin: 230px 4px 0 0;
+  margin-right: -45px;
   width: 52px;
 }
 
 .glyphicon.glyphicon-chevron-left {
   margin-top: -20px;
+  margin-left: -18px;
 }
 
 .glyphicon.glyphicon-chevron-right {
   margin-top: -20px;
-  margin-right: -13px;
+  margin-right: -18px;
 }
 
 .glyphicon.glyphicon-chevron-left:before, .glyphicon.glyphicon-chevron-right:before  {
