@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+include('admin/consultas.php');
+$spon = obtieneSponActivos();
+?>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -143,6 +147,40 @@
         <div class="container">
                 <div id="tituloSponsors" id="col-lg-4"><h1>Sponsors</h1></div>
                 <div class="col-lg-12">
+                    
+                    <?php
+                        $i = 1;
+                        $inicio = 1;
+                        $fin = 3; 
+                        foreach ($spon as $sp) {
+
+                                if($inicio == $i){
+
+                                    echo '<div class="row"><div class="col-lg-4"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div>';
+                                    $inicio = $inicio + 3;
+                                    $i++;
+
+                                }elseif ($fin == $i){
+                                    
+                                    echo '<div class="col-lg-4"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div></div>';
+                                    $fin = $fin + 3;
+                                    $i++;
+
+                                }else{
+
+                                    echo '<div class="col-lg-4"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div>';
+                                    $i++;
+                                }
+                        }
+
+                        if($i % 3 != 0){
+
+                            echo '</div>';
+                        }
+                    ?>
+                    
+                    <!--
+
                     <div class="row">
                         <div class="col-lg-4">
                             <img src="img/300x100.png" class="img-responsive" alt="">
@@ -157,11 +195,14 @@
                             <p></p>
                         </div>    
                     </div>
+
+                    -->
+
                 </div> 
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-3">
-                            <img src="img/spon/IMG_1017.JPG" class="img-responsive" alt="">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
                             <p></p>
                         </div>
                         <div class="col-lg-3">

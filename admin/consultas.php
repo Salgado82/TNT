@@ -2,9 +2,6 @@
 
 	include('conexion.php');
 
-	//Conexion
-	global $mysqli;
-
 	function obtieneSpon(){
 
 		$sponsors = mysqli_query($mysqli,"SELECT * FROM sponsors");
@@ -13,6 +10,9 @@
 	}
 
 	function obtieneSponActivos(){
+
+		//Conexion
+		global $mysqli;
 
 		$sponsorsAct = mysqli_query($mysqli,"SELECT * from sponsors WHERE status='1'");
 
