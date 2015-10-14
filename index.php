@@ -78,11 +78,70 @@
     <!-- Sponsors Section -->
     <section id="sponsors" class="sponsors-section">
         <div class="container">
-            <div class="row">
                 <div class="col-lg-12">
-                    <h1>Sponsors Section</h1>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>    
+                    </div>
+                </div> 
+                 <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>    
+                    </div>
+                </div> 
+                 <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>    
+                    </div>
                 </div>
-            </div>
+                 <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>
+                        <div class="col-lg-4">
+                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <p></p>
+                        </div>    
+                    </div>
+                </div>                    
         </div>
     </section>
 
