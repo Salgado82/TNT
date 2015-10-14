@@ -69,7 +69,68 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>News Section</h1>
+
+                    <!-- /Carousel -->
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+                        <div class="carousel-inner">
+
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="thumbnail">
+                                            <img src="http://placehold.it/545x343" width="480px">
+                                                <h3>Titulo</h3>
+                                                <span id="icono" class="glyphicon glyphicon-calendar"> 27/Feb/15</span>
+                                                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="thumbnail">
+                                            <img src="http://placehold.it/545x343">
+                                                <h3>Titulo</h3>
+                                                <span id="icono" class="glyphicon glyphicon-calendar"> 27/Feb/15</span>
+                                                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="thumbnail">
+                                            <img src="http://placehold.it/545x343" width="480px">
+                                                <h3>Titulo</h3>
+                                                <span id="icono" class="glyphicon glyphicon-calendar"> 27/Feb/15</span>
+                                                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-md-6">
+                                        <div class="thumbnail">
+                                            <img src="http://placehold.it/545x343">
+                                                <h3>Titulo</h3>
+                                                <span id="icono" class="glyphicon glyphicon-calendar"> 27/Feb/15</span>
+                                                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+
+                    </div>
+                    <!-- /Carousel -->
+
                 </div>
             </div>
         </div>
@@ -94,49 +155,21 @@
                         </div>    
                     </div>
                 </div> 
-                 <div class="col-lg-12">
+                <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                             <img src="img/300x100.png" class="img-responsive" alt="">
                             <p></p>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                             <img src="img/300x100.png" class="img-responsive" alt="">
                             <p></p>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-3">
                             <img src="img/300x100.png" class="img-responsive" alt="">
                             <p></p>
-                        </div>    
-                    </div>
-                </div> 
-                 <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <img src="img/300x100.png" class="img-responsive" alt="">
-                            <p></p>
-                        </div>
-                        <div class="col-lg-4">
-                            <img src="img/300x100.png" class="img-responsive" alt="">
-                            <p></p>
-                        </div>
-                        <div class="col-lg-4">
-                            <img src="img/300x100.png" class="img-responsive" alt="">
-                            <p></p>
-                        </div>    
-                    </div>
-                </div>
-                 <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <img src="img/300x100.png" class="img-responsive" alt="">
-                            <p></p>
-                        </div>
-                        <div class="col-lg-4">
-                            <img src="img/300x100.png" class="img-responsive" alt="">
-                            <p></p>
-                        </div>
-                        <div class="col-lg-4">
+                        </div> 
+                        <div class="col-lg-3">
                             <img src="img/300x100.png" class="img-responsive" alt="">
                             <p></p>
                         </div>    
