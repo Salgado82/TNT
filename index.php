@@ -161,7 +161,7 @@
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-3">
-                            <img src="img/300x100.png" class="img-responsive" alt="">
+                            <img src="img/spon/IMG_1017.JPG" class="img-responsive" alt="">
                             <p></p>
                         </div>
                         <div class="col-lg-3">
