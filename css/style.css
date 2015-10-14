@@ -7,12 +7,27 @@
 @import url(news.css);
 @import url(sponsors.css);
 
+@font-face
+{
+  font-family: "OpenS";
+  src: url("../fonts/OpenSans.ttf");
+}
+
+@font-face
+{
+  font-family: "OpenSL";
+  src: url("../fonts/OpenSansL.ttf");
+}
+
 body {
     width: 100%;
     height: 100%;
+    font-family: OpenS !important;
 }
 
 html {
     width: 100%;
     height: 100%;
+
 }
+

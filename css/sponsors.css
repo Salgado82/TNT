@@ -2,8 +2,7 @@
 
 .sponsors-section {
     height: auto;
-    padding-top: 150px;
-    text-align: center;
+    padding-top: 100px;
     background: #fff;
     margin-bottom: 20px;
 }
@@ -25,4 +24,11 @@
 .sponsors-section img:hover{
 
 	margin-top: 2px;
+}
+
+#tituloSponsors h1{
+
+	color: #000;
+	font-size: 55px !important;
+	margin-bottom: 20px;
 }

@@ -58,7 +58,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Home Section</h1>
+                    <h1>TNT</h1>
+                    <span id="segundo">Lighting detectives México D.F.</span>
                 </div>
             </div>
         </div>
@@ -67,6 +68,7 @@
     <!-- News Section -->
     <section id="news" class="news-section">
         <div class="container">
+            <div id="tituloNews" id="col-lg-4"><h1>News</h1></div>
             <div class="row">
                 <div class="col-lg-12">
 
@@ -139,6 +141,7 @@
     <!-- Sponsors Section -->
     <section id="sponsors" class="sponsors-section">
         <div class="container">
+                <div id="tituloSponsors" id="col-lg-4"><h1>Sponsors</h1></div>
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-4">
