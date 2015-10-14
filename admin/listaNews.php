@@ -1,3 +1,7 @@
+<?php
+include ('consultas.php');
+$news = obtieneNews();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,8 +41,8 @@
             <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="listaNews">Lista</a></li>
-                <li class="active"><a href="nuevaNew.php">Añadir</a></li>
+                <li><a href="listaNews.php">Lista</a></li>
+                <li class="active"><a href="index.php">Añadir</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -58,28 +62,30 @@
 
       <div class="row">
         
-        <div class="col-lg-8 col-lg-offset-2"> 
+        <div class="col-lg-10 col-lg-offset-1"> 
           <div class="page-header">
-            <h1>Nueva noticia</h1>
+            <h1>Listado de Noticias</h1>
           </div>
 
-          <form role="form" action="insertarNew.php" method="post" enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="ejemplo_email_1">Titulo de la noticia</label>
-              <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Escribe un titulo a la noticia">
-            </div>
-            <div class="form-group">
-              <label for="ejemplo_password_1">Información de la noticia</label>
-              <p class="help-block">Maximo 500 caracteres</p>
-              <textarea class="form-control" id="info" name="info" placeholder="Escribe la información de la noticia" rows="5"></textarea>
-            </div>
-            <div class="form-group">
-              <label for="ejemplo_archivo_1">Seleccionar imagen</label>
-              <input id="imagen" name="imagen" type="file" class="form-control">
-              <p class="help-block">Recuerda que la imagen debe ser maximo de 550x350.</p>
-            </div>
-            <button type="submit" class="btn btn-default">Enviar</button>
-          </form>
+            <!-- Table -->
+            <table class="table">
+              <tr>
+                <td>TITULO</td>
+                <td>INFORMACIÓN</td>
+                <td>FECHA</td>
+                <td>IMAGEN</td>
+                <td>ESTADO</td>
+              </tr>
+              <?php foreach($news as $newsx):?>
+              <tr>
+                <td><?php echo $newsx['titulo'];?></td>
+                <td><?php echo $newsx['info'];?></td>
+                <td><?php echo $newsx['fecha'];?></td>
+                <td><?php echo $newsx['img_news'];?></td>
+                <td><?php echo $newsx['status'];?></td>
+              </tr>
+              <?php endforeach;?>
+            </table>
   
         </div>  
 
