@@ -2,6 +2,7 @@
 <?php 
 include('admin/consultas.php');
 $spon = obtieneSponActivos();
+$news = obtieneNews();
 ?>
 <html lang="en">
 <head>
@@ -80,49 +81,100 @@ $spon = obtieneSponActivos();
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
                         <div class="carousel-inner">
+                            
+                            <?php
+                                $i = 1;
+                                $inicio = 1;
+                                $fin = 2; 
+                                foreach ($news as $new) {
 
-                            <div class="item active">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-6">
-                                        <div class="thumbnail">
-                                            <img src="http://placehold.it/545x343" width="480px">
-                                                <h3>Titulo</h3>
-                                                <span id="icono" class="glyphicon glyphicon-calendar"> 27/Feb/15</span>
-                                                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
-                                        </div>
-                                    </div>
+                                    if($i == $inicio){
+                                    ?>
+                                        <div class="item <?php if($i == 1){ echo "active";} ?>">
+                                            <div class="row">
+                                                <div class="col-sm-6 col-md-6">
+                                                    <div class="thumbnail">
+                                                        <img src="img/news/<?php echo $new['img_news']; ?>" width="480px">
+                                                            <h3><?php echo $new['titulo']; ?></h3>
+                                                            <span id="icono" class="glyphicon glyphicon-calendar"><?php echo $new['fechanews'];?></span>
+                                                            <?php
 
-                                    <div class="col-sm-6 col-md-6">
-                                        <div class="thumbnail">
-                                            <img src="http://placehold.it/545x343">
-                                                <h3>Titulo</h3>
-                                                <span id="icono" class="glyphicon glyphicon-calendar"> 27/Feb/15</span>
-                                                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-sm-6 col-md-6">
-                                        <div class="thumbnail">
-                                            <img src="http://placehold.it/545x343" width="480px">
-                                                <h3>Titulo</h3>
-                                                <span id="icono" class="glyphicon glyphicon-calendar"> 27/Feb/15</span>
-                                                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
-                                        </div>
-                                    </div>
+                                                                if(strlen($new['info']) > 350){
 
-                                    <div class="col-sm-6 col-md-6">
-                                        <div class="thumbnail">
-                                            <img src="http://placehold.it/545x343">
-                                                <h3>Titulo</h3>
-                                                <span id="icono" class="glyphicon glyphicon-calendar"> 27/Feb/15</span>
-                                                <p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI. Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+                                                                    $texto = substr($new['info'], 0, 350);
+                                                                    $textoCom = substr($new['info'], 350);
+                                                                ?>
+
+                                                                    <p><?php echo $texto;?> VER MAS</p>
+                                                                
+                                                                <?php
+
+                                                                }else{
+
+                                                                    $texto = $new['info'];
+                                                                
+                                                                ?>
+                                                                
+                                                                    <p><?php echo $texto;?></p>
+                                                                
+                                                                <?php
+                                                                }
+                                                                $i++;
+                                                                $inicio = $inicio + 2;
+                                                            ?>   
+                                                    </div>
+                                                </div>
+
+                                    <?php
+                                    }elseif ($i == $fin) {
+                                    ?>  
+                                                <div class="col-sm-6 col-md-6">
+                                                    <div class="thumbnail">
+                                                        <img src="img/news/<?php echo $new['img_news']; ?>" width="480px">
+                                                            <h3><?php echo $new['titulo']; ?></h3>
+                                                            <span id="icono" class="glyphicon glyphicon-calendar"><?php echo $new['fechanews'];?></span>
+                                                            <?php
+
+                                                                if(strlen($new['info']) > 350){
+
+                                                                    $texto = substr($new['info'], 0, 350);
+                                                                    $textoCom = substr($new['info'], 350);
+                                                                ?>
+
+                                                                    <p><?php echo $texto;?> VER MAS</p>
+                                                                
+                                                                <?php
+
+                                                                }else{
+
+                                                                    $texto = $new['info'];
+                                                                
+                                                                ?>
+                                                                
+                                                                    <p><?php echo $texto;?></p>
+                                                                
+                                                                <?php
+                                                                }
+                                                                $i++;
+                                                                $fin = $fin + 2;
+                                                            ?>   
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    <?php
+                                    }
+                                }
+
+                                if($i%2 != 0){
+                                ?>
+                                            </div>
+                                        </div>    
+                                <?php
+                                }
+                            ?>
+                            
+
 
                         </div>
 
