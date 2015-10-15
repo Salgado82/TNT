@@ -16,6 +16,7 @@ $news = obtieneNews();
 
     <!-- Bootstrap CSS -->
     <link href="utilidades/boot/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="utilidades/popover/css/jquery.webui-popover.min.css">
 
     <!-- Style CSS -->
     <link href="css/style.css" rel="stylesheet">
@@ -94,7 +95,7 @@ $news = obtieneNews();
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="thumbnail">
-                                                        <img src="img/news/<?php echo $new['img_news']; ?>" width="480px">
+                                                        <img src="img/news/<?php echo $new['img_news']; ?>" width="400px">
                                                             <h3><?php echo $new['titulo']; ?></h3>
                                                             <span id="icono" class="glyphicon glyphicon-calendar"><?php echo $new['fechanews'];?></span>
                                                             <?php
@@ -130,7 +131,7 @@ $news = obtieneNews();
                                     ?>  
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="thumbnail">
-                                                        <img src="img/news/<?php echo $new['img_news']; ?>" width="480px">
+                                                        <img src="img/news/<?php echo $new['img_news']; ?>" width="400px">
                                                             <h3><?php echo $new['titulo']; ?></h3>
                                                             <span id="icono" class="glyphicon glyphicon-calendar"><?php echo $new['fechanews'];?></span>
                                                             <?php
@@ -166,15 +167,13 @@ $news = obtieneNews();
                                     }
                                 }
 
-                                if($i%2 != 0){
+                                if(($i-1)%2 != 0){
                                 ?>
                                             </div>
                                         </div>    
                                 <?php
                                 }
                             ?>
-                            
-
 
                         </div>
 
@@ -197,7 +196,7 @@ $news = obtieneNews();
     <!-- Sponsors Section -->
     <section id="sponsors" class="sponsors-section">
         <div class="container">
-                <div id="tituloSponsors" id="col-lg-4"><h1>Sponsors</h1></div>
+                <div id="tituloSponsors" id="col-lg-4"><h1>Sponsors<?php echo $i;?></h1></div>
                 <div class="col-lg-12">
                     
                     <?php
@@ -252,7 +251,6 @@ $news = obtieneNews();
 
                 </div> 
                 <div class="col-lg-12">
-                    <div class="row">
                         <div class="col-lg-3">
                             <img src="img/300x100.png" class="img-responsive" alt="">
                             <p></p>
@@ -289,11 +287,18 @@ $news = obtieneNews();
     <!-- Participants Section -->
     <section id="participants" class="participants-section">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Participants Section</h1>
+                <div class="col-lg-3">
+                    <a id="popover" href="#" class="show-pop btn  right" data-title="Titfgghfghgfle" data-content="Contfghfgdhhgfgfhdents..." data-placement="right"><img src="img/parti/steve.jpg" alt="" class="img-responsive"></a> 
                 </div>
-            </div>
+                <div class="col-lg-3">
+                    <img src="img/parti/steve.jpg" alt="" class="img-responsive"> 
+                </div>
+                <div class="col-lg-3">
+                    <img src="img/parti/steve.jpg" alt="" class="img-responsive"> 
+                </div>
+                <div class="col-lg-3">
+                    <img src="img/parti/steve.jpg" alt="" class="img-responsive"> 
+                </div>
         </div>
     </section>
 
@@ -302,10 +307,23 @@ $news = obtieneNews();
 
     <!-- Bootstrap JS -->
     <script src="utilidades/boot/js/bootstrap.min.js"></script>
+        
+    <script src="utilidades/popover/js/jquery.webui-popover.min.js"></script> 
 
     <!-- Scrolling Js -->
     <script src="utilidades/boot/js/jquery.easing.min.js"></script>
     <script src="js/menu.js"></script>
+
+    <script>
+
+        $('a#popover').webuiPopover({
+
+            multi:false,
+            closeable:true,
+            arrow:true
+        });
+
+    </script>
 
 </body>
 
