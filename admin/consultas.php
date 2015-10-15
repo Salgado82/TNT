@@ -31,8 +31,7 @@
 
 		global $mysqli;
 
-		$news = mysqli_query($mysqli,"SELECT * from news");
-
+		$news = mysqli_query($mysqli,"SELECT id,titulo,info,img_news,status,date_format(fecha,'%d/%m/%Y') AS fechanews FROM news");
 		return $news;
 	}
 

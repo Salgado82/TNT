@@ -19,6 +19,14 @@ $news = obtieneNews();
 
     <!-- Css -->
     <link href="../css/styleAdmin.css" rel="stylesheet">
+    <style type="text/css">
+      .label-success, .label-warning{
+        font-size: 14px;
+      }
+      span{
+        font-size: 18px;
+      }
+    </style>
 
   </head>
 
@@ -66,7 +74,8 @@ $news = obtieneNews();
           <div class="page-header">
             <h1>Listado de Noticias</h1>
           </div>
-
+          
+          <div class="panel panel-default">
             <!-- Table -->
             <table class="table">
               <tr>
@@ -75,23 +84,100 @@ $news = obtieneNews();
                 <td>FECHA</td>
                 <td>IMAGEN</td>
                 <td>ESTADO</td>
+                <td>AJUSTES</td>
               </tr>
               <?php foreach($news as $newsx):?>
               <tr>
                 <td><?php echo $newsx['titulo'];?></td>
                 <td><?php echo $newsx['info'];?></td>
-                <td><?php echo $newsx['fecha'];?></td>
-                <td><?php echo $newsx['img_news'];?></td>
-                <td><?php echo $newsx['status'];?></td>
+                <td><?php echo $newsx['fechanews'];?></td>
+                <td>
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver_modal_<?php echo $newx->id; ?>">
+                   Ver imagen
+                  </button>
+                </td>
+                <td>
+                  <?php if($newsx['status']==1){?>
+                    <label class="label label-success">Activo</label>
+                  <?php }else{ ?><label class="label label-warning">Inactivo</label><?php } ?>
+                </td>
+                <td>
+                  <?php if($newsx['status']==1){?>
+                     <center>
+                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#desctivar_<?php echo $newx->id; ?>">
+                        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                      </button>
+                     </center>
+                  <?php }else{ ?><center>
+                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#activar_<?php echo $newx->id; ?>">
+                        <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+                      </button>
+                     </center>
+                     <?php } ?>
+                </td>
               </tr>
               <?php endforeach;?>
             </table>
-  
+          </div>     
         </div>  
 
       </div>
-
     </div> <!-- /container -->
+ <?php foreach($news as $newsx):?>
+    <!-- Modal -->
+    <div class="modal fade" id="ver_modal_<?php echo $newsx->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><?php echo $newsx['titulo'];?></h4>
+          </div>
+          <div class="modal-body">
+           <?php echo "<img src='../img/news/$newsx[img_news]'/>";?>
+          </div>
+        </div>
+      </div>
+    </div>
+<?php endforeach;?>
+
+    <!-- Modal -->
+    <div class="modal fade" id="desctivar_<?php echo $newsx->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">DESACTIVAR</h4>
+          </div>
+          <div class="modal-body">
+           ¿Desactivar la noticia?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="activar_<?php echo $newsx->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">ACTIVAR</h4>
+          </div>
+          <div class="modal-body">
+           ¿Activar la noticia?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script src="../utilidades/jquery/jquery.js"></script>
