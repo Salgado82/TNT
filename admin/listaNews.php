@@ -93,7 +93,7 @@ $news = obtieneNews();
                 <td><?php echo $newsx['fechanews'];?></td>
                 <td>
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver_modal_<?php echo $newx->id; ?>">
+                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver_modal_<?php echo $newsx['id']; ?>">
                    Ver imagen
                   </button>
                 </td>
@@ -126,7 +126,7 @@ $news = obtieneNews();
     </div> <!-- /container -->
  <?php foreach($news as $newsx):?>
     <!-- Modal -->
-    <div class="modal fade" id="ver_modal_<?php echo $newsx->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="ver_modal_<?php echo $newsx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -134,7 +134,7 @@ $news = obtieneNews();
             <h4 class="modal-title" id="myModalLabel"><?php echo $newsx['titulo'];?></h4>
           </div>
           <div class="modal-body">
-           <?php echo "<img src='../img/news/$newsx[img_news]'/>";?>
+              <?php echo "<img src='../img/news/".$newsx['img_news']."' class='img-responsive' />";?>
           </div>
         </div>
       </div>
