@@ -2,10 +2,7 @@
 
 	include('conexion.php');
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 0a1813810fde6eb61d40189f26ae3b5e3dca7ac5
 	function obtieneSpon(){
 
 		$sponsors = mysqli_query($mysqli,"SELECT * FROM sponsors");
