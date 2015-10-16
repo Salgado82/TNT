@@ -47,17 +47,24 @@ $news = obtieneNews();
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="listaNews.php">Lista</a></li>
                 <li class="active"><a href="index.php">Añadir</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sponsors <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPONSORS <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="listaSpon.php">Lista</a></li>
                 <li><a href="nuevaSpon.php">Añadir</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PARTICIPANTES <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="listaParticipantes.php">Lista</a></li>
+                <li><a href="nuevoParticipante.php">Añadir</a></li>
               </ul>
             </li>
           </ul>
@@ -79,12 +86,12 @@ $news = obtieneNews();
             <!-- Table -->
             <table class="table">
               <tr>
-                <td>TITULO</td>
-                <td>INFORMACIÓN</td>
-                <td>FECHA</td>
-                <td>IMAGEN</td>
-                <td>ESTADO</td>
-                <td>AJUSTES</td>
+                <th>TITULO</th>
+                <th>INFORMACIÓN</th>
+                <th>FECHA</th>
+                <th>IMAGEN</th>
+                <th>ESTADO</th>
+                <th>AJUSTES</th>
               </tr>
               <?php foreach($news as $newsx):?>
               <tr>
@@ -104,16 +111,16 @@ $news = obtieneNews();
                 </td>
                 <td>
                   <?php if($newsx['status']==1){?>
-                     <center>
-                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#desctivar_<?php echo $newx->id; ?>">
+                     
+                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#desctivar_<?php echo $newsx['id']; ?>">
                         <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
                       </button>
-                     </center>
-                  <?php }else{ ?><center>
-                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#activar_<?php echo $newx->id; ?>">
+                     
+                  <?php }else{ ?>
+                      <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#activar_<?php echo $newsx['id']; ?>">
                         <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
                       </button>
-                     </center>
+                     
                      <?php } ?>
                 </td>
               </tr>
@@ -141,8 +148,10 @@ $news = obtieneNews();
     </div>
 <?php endforeach;?>
 
+<?php foreach($news as $newsx):?>
     <!-- Modal -->
-    <div class="modal fade" id="desctivar_<?php echo $newsx->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <form role="form" action="desactivarNew.php" method="post" enctype="multipart/form-data">
+    <div class="modal fade" id="desctivar_<?php echo $newsx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -151,17 +160,22 @@ $news = obtieneNews();
           </div>
           <div class="modal-body">
            ¿Desactivar la noticia?
+           <input type="hidden" name="id" value="<?php echo $newsx['id']; ?>">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Aceptar</button>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
           </div>
         </div>
       </div>
     </div>
+    </form>
+<?php endforeach;?>
 
+<?php foreach($news as $newsx):?>
     <!-- Modal -->
-    <div class="modal fade" id="activar_<?php echo $newsx->id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <form role="form" action="activarNew.php" method="post" enctype="multipart/form-data">
+    <div class="modal fade" id="activar_<?php echo $newsx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -170,14 +184,17 @@ $news = obtieneNews();
           </div>
           <div class="modal-body">
            ¿Activar la noticia?
+           <input type="hidden" name="id" value="<?php echo $newsx['id']; ?>">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Aceptar</button>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
           </div>
         </div>
       </div>
     </div>
+  </form>
+<?php endforeach;?>
 
     <!-- jQuery -->
     <script src="../utilidades/jquery/jquery.js"></script>

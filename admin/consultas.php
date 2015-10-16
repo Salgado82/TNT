@@ -4,6 +4,7 @@
 
 
 	function obtieneSpon(){
+		global $mysqli;
 
 		$sponsors = mysqli_query($mysqli,"SELECT * FROM sponsors");
 
@@ -33,6 +34,14 @@
 
 		$news = mysqli_query($mysqli,"SELECT id,titulo,info,img_news,status,date_format(fecha,'%d/%m/%Y') AS fechanews FROM news");
 		return $news;
+	}
+
+	function obtienePart(){
+
+		global $mysqli;
+
+		$participantes = mysqli_query($mysqli,"SELECT * FROM participantes");
+		return $participantes;
 	}
 
 ?>

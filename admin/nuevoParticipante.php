@@ -34,7 +34,7 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown active">
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="listaNews.php">Lista</a></li>
@@ -48,7 +48,7 @@
                 <li><a href="nuevaSpon.php">Añadir</a></li>
               </ul>
             </li>
-            <li class="dropdown">
+            <li class="dropdown  active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PARTICIPANTES <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="listaParticipantes.php">Lista</a></li>
@@ -67,18 +67,18 @@
         
         <div class="col-lg-8 col-lg-offset-2"> 
           <div class="page-header">
-            <h1>Nueva noticia</h1>
+            <h1>Nuevo participante</h1>
           </div>
 
-          <form role="form" action="insertarNew.php" method="post" enctype="multipart/form-data">
+          <form role="form" action="insertarPart.php" method="post" enctype="multipart/form-data">
             <div class="form-group">
-              <label for="ejemplo_email_1">Titulo de la noticia</label>
-              <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Escribe un titulo a la noticia">
+              <label for="ejemplo_email_1">Nombre del Participante</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe el nombre del participante">
             </div>
             <div class="form-group">
-              <label for="ejemplo_password_1">Información de la noticia</label>
+              <label for="ejemplo_password_1">Descripción del Participante</label>
               <p class="help-block">Maximo 500 caracteres</p>
-              <textarea class="form-control" id="info" name="info" placeholder="Escribe la información de la noticia" rows="5"></textarea>
+              <textarea class="form-control" id="descrip" name="descrip" placeholder="Escribe la descripción del participante" rows="5"></textarea>
             </div>
             <div class="form-group">
               <label for="ejemplo_archivo_1">Seleccionar imagen</label>

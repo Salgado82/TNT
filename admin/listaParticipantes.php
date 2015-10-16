@@ -1,6 +1,6 @@
 <?php
 include ('consultas.php');
-$sponsors = obtieneSpon();
+$participantes = obtienePart();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,6 @@ $sponsors = obtieneSpon();
 
     <!-- Css -->
     <link href="../css/styleAdmin.css" rel="stylesheet">
-    
     <style type="text/css">
       .label-success, .label-warning{
         font-size: 14px;
@@ -54,14 +53,14 @@ $sponsors = obtieneSpon();
                 <li class="active"><a href="index.php">Añadir</a></li>
               </ul>
             </li>
-            <li class="dropdown  active">
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPONSORS <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="listaSpon.php">Lista</a></li>
                 <li><a href="nuevaSpon.php">Añadir</a></li>
               </ul>
             </li>
-            <li class="dropdown">
+            <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PARTICIPANTES <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="listaParticipantes.php">Lista</a></li>
@@ -73,46 +72,50 @@ $sponsors = obtieneSpon();
       </div>
     </nav>
 
+
     <div class="container">
 
       <div class="row">
         
-        <div class="col-lg-8 col-lg-offset-2"> 
+        <div class="col-lg-10 col-lg-offset-1"> 
           <div class="page-header">
-            <h1>Listado de Sponsors</h1>
+            <h1>Listado de Participantes</h1>
           </div>
+          
           <div class="panel panel-default">
             <!-- Table -->
             <table class="table">
               <tr>
-                <th>NOMBRE</th>
+                <th>PARTICIPANTE</th>
+                <th>DESCRIPCIÓN</th>
                 <th>IMAGEN</th>
                 <th>ESTADO</th>
                 <th>AJUSTES</th>
               </tr>
-              <?php foreach($sponsors as $sponx):?>
+              <?php foreach($participantes as $part):?>
               <tr>
-                <td><?php echo $sponx['nombre'];?></td>
+                <td><?php echo $part['participante'];?></td>
+                <td><?php echo $part['descripcion'];?></td>
                 <td>
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver_modal_<?php echo $sponx['id']; ?>">
+                  <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#ver_modal_<?php echo $part['id']; ?>">
                    Ver imagen
                   </button>
                 </td>
                 <td>
-                  <?php if($sponx['status']==1){?>
+                  <?php if($part['estado']==1){?>
                     <label class="label label-success">Activo</label>
                   <?php }else{ ?><label class="label label-warning">Inactivo</label><?php } ?>
                 </td>
                 <td>
-                  <?php if($sponx['status']==1){?>
+                  <?php if($part['estado']==1){?>
                      
-                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#desctivar_<?php echo $sponx['id']; ?>">
+                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#desctivar_<?php echo $part['id']; ?>">
                         <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
                       </button>
                      
                   <?php }else{ ?>
-                      <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#activar_<?php echo $sponx['id']; ?>">
+                      <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#activar_<?php echo $part['id']; ?>">
                         <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
                       </button>
                      
@@ -121,35 +124,32 @@ $sponsors = obtieneSpon();
               </tr>
               <?php endforeach;?>
             </table>
-          </div>
-  
+          </div>     
         </div>  
 
       </div>
-
     </div> <!-- /container -->
-
-     <?php foreach($sponsors as $sponx):?>
-        <!-- Modal -->
-        <div class="modal fade" id="ver_modal_<?php echo $sponx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><?php echo $sponx['nombre'];?></h4>
-              </div>
-              <div class="modal-body">
-                  <?php echo "<img src='../img/spon/".$sponx['img_spo']."' class='img-responsive' />";?>
-              </div>
-            </div>
+ <?php foreach($participantes as $part):?>
+    <!-- Modal -->
+    <div class="modal fade" id="ver_modal_<?php echo $part['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><?php echo $part['participante'];?></h4>
+          </div>
+          <div class="modal-body">
+              <?php echo "<img src='../img/part/".$part['img_part']."' class='img-responsive' />";?>
           </div>
         </div>
-    <?php endforeach;?>
+      </div>
+    </div>
+<?php endforeach;?>
 
-    <?php foreach($sponsors as $sponx):?>
+ <?php foreach($participantes as $part):?>
     <!-- Modal -->
-    <form role="form" action="desactivarSpon.php" method="post" enctype="multipart/form-data">
-    <div class="modal fade" id="desctivar_<?php echo $sponx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <form role="form" action="desactivarPart.php" method="post" enctype="multipart/form-data">
+    <div class="modal fade" id="desctivar_<?php echo $part['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -157,22 +157,23 @@ $sponsors = obtieneSpon();
             <h4 class="modal-title" id="myModalLabel">DESACTIVAR</h4>
           </div>
           <div class="modal-body">
-           ¿Desactivar el sponsor?
-           <input type="hidden" name="id" value="<?php echo $sponx['id']; ?>">
+           ¿Desactivar al participante?
+            <input type="hidden" name="id" value="<?php echo $part['id']; ?>">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Aceptar</button>
+             <button type="submit" class="btn btn-primary">Aceptar</button>
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   </form>
-   <?php endforeach;?>
-<?php foreach($sponsors as $sponx):?>
+    <?php endforeach;?>
+
+ <?php foreach($participantes as $part):?>
     <!-- Modal -->
-    <form role="form" action="activarSpon.php" method="post" enctype="multipart/form-data">
-    <div class="modal fade" id="activar_<?php echo $sponx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <form role="form" action="activarPart.php" method="post" enctype="multipart/form-data">
+    <div class="modal fade" id="activar_<?php echo $part['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -180,19 +181,18 @@ $sponsors = obtieneSpon();
             <h4 class="modal-title" id="myModalLabel">ACTIVAR</h4>
           </div>
           <div class="modal-body">
-           ¿Activar el sponsor?
-           <input type="hidden" name="id" value="<?php echo $sponx['id']; ?>">
+          ¿Activar al participante?
+            <input type="hidden" name="id" value="<?php echo $part['id']; ?>">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Aceptar</button>
+             <button type="submit" class="btn btn-primary">Aceptar</button>
           </div>
         </div>
       </div>
-    </div>
+    </div> 
   </form>
-     <?php endforeach;?>
-
+<?php endforeach;?>
     <!-- jQuery -->
     <script src="../utilidades/jquery/jquery.js"></script>
 

@@ -35,17 +35,24 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">News <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Lista</a></li>
-                <li><a href="nuevaNew.php">Añadir</a></li>
+                <li><a href="listaNews.php">Lista</a></li>
+                <li class="active"><a href="index.php">Añadir</a></li>
               </ul>
             </li>
-            <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sponsors <span class="caret"></span></a>
+            <li class="dropdown  active">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPONSORS <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Lista</a></li>
-                <li class="active"><a href="nuevaSpon.php">Añadir</a></li>
+                <li><a href="listaSpon.php">Lista</a></li>
+                <li><a href="nuevaSpon.php">Añadir</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PARTICIPANTES <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="listaParticipantes.php">Lista</a></li>
+                <li><a href="nuevoParticipante.php">Añadir</a></li>
               </ul>
             </li>
           </ul>
