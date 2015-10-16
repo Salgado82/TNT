@@ -33,7 +33,29 @@
           <a class="navbar-brand" href="#">Administración TNT</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="listaNews.php">Lista</a></li>
+                <li><a href="nuevaNew.php">Añadir</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPONSORS <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="listaSpon.php">Lista</a></li>
+                <li><a href="nuevaSpon.php">Añadir</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PARTICIPANTES <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="listaParticipantes.php">Lista</a></li>
+                <li><a href="nuevoParticipante.php">Añadir</a></li>
+              </ul>
+            </li>
+          </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
@@ -45,26 +67,9 @@
         
         <div class="col-lg-8 col-lg-offset-2"> 
           <div class="page-header">
-            <h1>Acceso restringido</h1>
+            <h1>Index admin del sitio</h1>
           </div>
-
-          <div id="alertas"><p></p></div>
-
-          <div class="col-lg-4 col-lg-offset-4">
-            
-            <div class="form-group">
-              <label for="ejemplo_email_1">Usuario</label>
-              <input type="text" class="col-lg-4 form-control" id="user" name="user" placeholder="Escriba su usuario">
-            </div>
-            <br><br>
-             <div class="form-group">
-              <label for="ejemplo_email_1">Contraseña</label>
-              <input type="password" class="col-lg-4 form-control" id="pass" name="pass" placeholder="Escriba su contraseña">
-            </div>
-            <br><br>
-            <button type="submit" class="btn btn-default" id="acceso">Ingresar</button>
-
-          </div>
+  
         </div>  
 
       </div>
@@ -73,7 +78,6 @@
 
     <!-- jQuery -->
     <script src="../utilidades/jquery/jquery.js"></script>
-    <script src="../js/acceso.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="../utilidades/boot/js/bootstrap.min.js"></script>

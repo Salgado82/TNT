@@ -21,7 +21,7 @@ $(document).ready(function() {
 			if($("#user").val() == "admin" && $("#user").val() == "admin"){
 
 				//console.log("todo bien");
-				window.location.href = "index.php";
+				window.location.href = "inicio.php";
 			}else{
 
 				$("#alertas").addClass("alert alert-danger");
