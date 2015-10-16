@@ -38,14 +38,14 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="listaNews.php">Lista</a></li>
-                <li class="active"><a href="index.php">Añadir</a></li>
+                <li><a href="nuevaNew.php">Añadir</a></li>
               </ul>
             </li>
-            <li class="dropdown  active">
+            <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">SPONSORS <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="listaSpon.php">Lista</a></li>
-                <li><a href="nuevaSpon.php">Añadir</a></li>
+                <li class="active"><a href="nuevaSpon.php">Añadir</a></li>
               </ul>
             </li>
             <li class="dropdown">
@@ -78,7 +78,7 @@
             <div class="form-group">
               <label for="ejemplo_archivo_1">Seleccionar imagen</label>
               <input id="imagen" name="imagen" type="file" class="form-control">
-              <p class="help-block">Recuerda que la imagen debe ser maximo de 550x350.</p>
+              <p class="help-block">Recuerda que la imagen se recomienda de 300x150 px.</p>
             </div>
             <button type="submit" class="btn btn-default">Enviar</button>
           </form>

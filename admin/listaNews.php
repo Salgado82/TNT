@@ -49,8 +49,8 @@ $news = obtieneNews();
             <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">NEWS <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="listaNews.php">Lista</a></li>
-                <li class="active"><a href="index.php">Añadir</a></li>
+                <li class="active"><a href="listaNews.php">Lista</a></li>
+                <li><a href="nuevaNew.php">Añadir</a></li>
               </ul>
             </li>
             <li class="dropdown">
