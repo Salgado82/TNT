@@ -1,5 +1,6 @@
 body {
-  min-height: 2000px;
+  min-height: auto;
+  margin-bottom: 100px;
 }
 
 .navbar-static-top {

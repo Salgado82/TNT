@@ -22,3 +22,19 @@
 	font-family: OpenSL;
 	font-size: 30px;
 }
+
+#programaB{
+    margin-top: 30px;
+    height: auto;
+    background-color: transparent;
+    padding-top: 15px;
+    padding-bottom:  15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    vertical-align: center;
+}
+
+#programaB a, a:link, a:hover, a:visited,  a:active{
+
+    color: #fff;
+}

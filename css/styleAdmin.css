@@ -16,13 +16,13 @@
 
 body {
     width: 100%;
-    height: 100%;
+    height:auto;
     font-family: OpenS !important;
 }
 
 html {
     width: 100%;
-    height: 100%;
+    height: auto;
 
 }
 

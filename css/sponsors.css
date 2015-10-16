@@ -1,10 +1,10 @@
 /*ESTILO SECTION SPONSORS*/
 
 .sponsors-section {
-    height: 820px;
+    height: auto;
     padding-top: 100px;
     background: #fff;
-    margin-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 .sponsors-section img{
@@ -30,5 +30,6 @@
 
 	color: #000;
 	font-size: 55px !important;
-	margin-bottom: 20px;
+	margin-bottom: 50px;
+	letter-spacing: 4px;
 }

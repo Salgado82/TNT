@@ -2,7 +2,8 @@
 <?php 
 include('admin/consultas.php');
 $spon = obtieneSponActivos();
-$news = obtieneNews();
+$news = obtieneNewsActivas();
+$parti = obtienePartActivas();
 ?>
 <html lang="en">
 <head>
@@ -40,19 +41,19 @@ $news = obtieneNews();
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#top">Home</a>
+                        <a class="page-scroll" href="#top">HOME</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#program">Program</a>
+                        <a class="" target="_blank" href="poster.html">PROGRAM</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#participants">Participants</a>
+                        <a class="page-scroll" href="#news">NEWS</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#news">News</a>
+                        <a class="page-scroll" href="#sponsors">SPONSORS</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#sponsors">Sponsors</a>
+                        <a class="page-scroll" href="#participants">PARTICIPANTS</a>
                     </li>
                 </ul>
             </div>
@@ -66,6 +67,8 @@ $news = obtieneNews();
                 <div class="col-lg-12">
                     <h1>TNT</h1>
                     <span id="segundo">Lighting detectives México D.F.</span>
+                    <br>
+                    <a href="poster.html" target="-blank"><button id="programaB">PROGRAM</button></a>
                 </div>
             </div>
         </div>
@@ -74,7 +77,7 @@ $news = obtieneNews();
     <!-- News Section -->
     <section id="news" class="news-section">
         <div class="container">
-            <div id="tituloNews" id="col-lg-4"><h1>News</h1></div>
+            <div id="tituloNews" class="col-lg-4"><h1>NEWS</h1></div>
             <div class="row">
                 <div class="col-lg-12">
 
@@ -84,14 +87,14 @@ $news = obtieneNews();
                         <div class="carousel-inner">
                             
                             <?php
-                                $i = 1;
+                                $j = 1;
                                 $inicio = 1;
                                 $fin = 2; 
                                 foreach ($news as $new) {
 
-                                    if($i == $inicio){
+                                    if($j == $inicio){
                                     ?>
-                                        <div class="item <?php if($i == 1){ echo "active";} ?>">
+                                        <div class="item <?php if($j == 1){ echo "active";} ?>">
                                             <div class="row">
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="thumbnail">
@@ -106,8 +109,9 @@ $news = obtieneNews();
                                                                     $textoCom = substr($new['info'], 350);
                                                                 ?>
 
-                                                                    <p><?php echo $texto;?> VER MAS</p>
-                                                                
+                                                                    <p><?php echo $texto;?>...</p>
+                                                                    <button type="button" id="masInfo" class="btn" data-toggle="modal" data-target="#masInfo_<?php echo $new['id']; ?>">
+                         
                                                                 <?php
 
                                                                 }else{
@@ -120,14 +124,14 @@ $news = obtieneNews();
                                                                 
                                                                 <?php
                                                                 }
-                                                                $i++;
+                                                                $j++;
                                                                 $inicio = $inicio + 2;
                                                             ?>   
                                                     </div>
                                                 </div>
 
                                     <?php
-                                    }elseif ($i == $fin) {
+                                    }elseif ($j == $fin) {
                                     ?>  
                                                 <div class="col-sm-6 col-md-6">
                                                     <div class="thumbnail">
@@ -142,8 +146,9 @@ $news = obtieneNews();
                                                                     $textoCom = substr($new['info'], 350);
                                                                 ?>
 
-                                                                    <p><?php echo $texto;?> VER MAS</p>
-                                                                
+                                                                    <p><?php echo $texto;?>...</p>
+                                                                    <button type="button" id="masInfo" class="btn" data-toggle="modal" data-target="#masInfo_<?php echo $new['id']; ?>">MAS INFO</button>
+
                                                                 <?php
 
                                                                 }else{
@@ -156,7 +161,7 @@ $news = obtieneNews();
                                                                 
                                                                 <?php
                                                                 }
-                                                                $i++;
+                                                                $j++;
                                                                 $fin = $fin + 2;
                                                             ?>   
                                                     </div>
@@ -165,9 +170,31 @@ $news = obtieneNews();
                                         </div>
                                     <?php
                                     }
+                                    ?>
+
+                                     <div class="modal fade" id="masInfo_<?php echo $new['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                        <h4 class="modal-title" id="myModalLabel"><?php echo $new['titulo'];?></h4>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <center>
+                                                            <?php echo "<img src='img/news/".$new['img_news']."' class='img-responsive' />";?>
+                                                        </center>
+                                                        <span class="glyphicon glyphicon-calendar"><?php echo $new['fechanews'];?></span>
+                                                        <br><br>
+                                                        <div id="textoMas"><?php echo $new['info']; ?></div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </div>
+                                <?php
                                 }
 
-                                if(($i-1)%2 != 0){
+                                if(($j-1)%2 != 0){
                                 ?>
                                             </div>
                                         </div>    
@@ -196,35 +223,35 @@ $news = obtieneNews();
     <!-- Sponsors Section -->
     <section id="sponsors" class="sponsors-section">
         <div class="container">
-                <div id="tituloSponsors" id="col-lg-4"><h1>Sponsors<?php echo $i;?></h1></div>
+                <div id="tituloSponsors" class="col-lg-4"><h1>SPONSORS</h1></div>
                 <div class="col-lg-12">
                     
                     <?php
                         $i = 1;
                         $inicio = 1;
-                        $fin = 3; 
+                        $fin = 4; 
                         foreach ($spon as $sp) {
 
                                 if($inicio == $i){
 
-                                    echo '<div class="row"><div class="col-lg-4"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div>';
-                                    $inicio = $inicio + 3;
+                                    echo '<div class="row"><div class="col-lg-3"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div>';
+                                    $inicio = $inicio + 4;
                                     $i++;
 
                                 }elseif ($fin == $i){
                                     
-                                    echo '<div class="col-lg-4"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div></div>';
-                                    $fin = $fin + 3;
+                                    echo '<div class="col-lg-3"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div></div>';
+                                    $fin = $fin + 4;
                                     $i++;
 
                                 }else{
 
-                                    echo '<div class="col-lg-4"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div>';
+                                    echo '<div class="col-lg-3"><img src="img/spon/'.$sp['img_spo'].'" class="img-responsive" alt=""><p></p></div>';
                                     $i++;
                                 }
                         }
 
-                        if($i % 3 != 0){
+                        if(($i-1) % 4 != 0){
 
                             echo '</div>';
                         }
@@ -250,6 +277,8 @@ $news = obtieneNews();
                     -->
 
                 </div> 
+
+                <!--
                 <div class="col-lg-12">
                         <div class="col-lg-3">
                             <img src="img/300x100.png" class="img-responsive" alt="">
@@ -268,7 +297,8 @@ $news = obtieneNews();
                             <p></p>
                         </div>    
                     </div>
-                </div>                    
+                </div>   
+                -->                 
         </div>
     </section>
 
@@ -287,18 +317,41 @@ $news = obtieneNews();
     <!-- Participants Section -->
     <section id="participants" class="participants-section">
         <div class="container">
-                <div class="col-lg-3">
-                    <a id="popover" href="#" class="show-pop btn  right" data-title="Titfgghfghgfle" data-content="Contfghfgdhhgfgfhdents..." data-placement="right"><img src="img/parti/steve.jpg" alt="" class="img-responsive"></a> 
-                </div>
-                <div class="col-lg-3">
-                    <img src="img/parti/steve.jpg" alt="" class="img-responsive"> 
-                </div>
-                <div class="col-lg-3">
-                    <img src="img/parti/steve.jpg" alt="" class="img-responsive"> 
-                </div>
-                <div class="col-lg-3">
-                    <img src="img/parti/steve.jpg" alt="" class="img-responsive"> 
-                </div>
+            <div class="row">
+                <div id="tituloParti" class="col-lg-4"><h1>PARTICIPANTS</h1></div>
+            </div>
+
+                <?php 
+
+                    foreach ($parti as $par){
+                    
+                    ?>
+                    
+                    <div class="col-lg-3">
+                        <a data-toggle="modal" data-target="#participante_<?php echo $par['id'];?>"><img src="img/part/<?php echo $par['img_part'];?>" alt="" class="img-responsive"></a> 
+                    </div>
+
+                    <div class="modal fade" id="participante_<?php echo $par['id'];?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel"><?php echo $par['participante']; ?></h4>
+                                </div>
+                                <div class="modal-body">
+                                    <center>
+                                        <?php echo "<img width='80%' src='img/part/".$par['img_part']."' class='img-responsive' />";?>
+                                    </center>
+                                    <br><br>
+                                    <div id="textoMas"><?php echo $par['descripcion'];?></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                <?php
+                    }
+                ?>
         </div>
     </section>
 
