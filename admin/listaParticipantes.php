@@ -120,6 +120,9 @@ $participantes = obtienePart();
                       </button>
                      
                      <?php } ?>
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editar_<?php echo $part['id']; ?>">
+                      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </button> 
                 </td>
               </tr>
               <?php endforeach;?>
@@ -182,6 +185,42 @@ $participantes = obtienePart();
           </div>
           <div class="modal-body">
           ¿Activar al participante?
+            <input type="hidden" name="id" value="<?php echo $part['id']; ?>">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+             <button type="submit" class="btn btn-primary">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </form>
+<?php endforeach;?>
+
+ <?php foreach($participantes as $part):?>
+    <!-- Modal -->
+     <form role="form" action="editarPart.php" method="post" enctype="multipart/form-data">
+    <div class="modal fade" id="editar_<?php echo $part['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">ACTIVAR</h4>
+          </div>
+          <div class="modal-body">
+          <div class="form-group">
+            <label for="ejemplo_email_1">Nombre del Participante</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $part['participante']; ?>">
+          </div>
+          <div class="form-group">
+            <label for="ejemplo_password_1">Descripción del Participante</label>
+            <textarea class="form-control" id="descrip" name="descrip" rows="5"><?php echo $part['descripcion']; ?></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ejemplo_archivo_1">Seleccionar imagen</label>
+            <input id="imagen" name="imagen" type="file" class="form-control">
+            <p class="help-block">Recuerda que la imagen se recomienda de 500x500 px.</p>
+          </div>
             <input type="hidden" name="id" value="<?php echo $part['id']; ?>">
           </div>
           <div class="modal-footer">

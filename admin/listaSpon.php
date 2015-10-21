@@ -117,6 +117,9 @@ $sponsors = obtieneSpon();
                       </button>
                      
                      <?php } ?>
+                    <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editar_<?php echo $sponx['id']; ?>">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    </button>  
                 </td>
               </tr>
               <?php endforeach;?>
@@ -181,6 +184,39 @@ $sponsors = obtieneSpon();
           </div>
           <div class="modal-body">
            ¿Activar el sponsor?
+           <input type="hidden" name="id" value="<?php echo $sponx['id']; ?>">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+     <?php endforeach;?>
+
+  <?php foreach($sponsors as $sponx):?>
+    <!-- Modal -->
+    <form role="form" action="editarSpon.php" method="post" enctype="multipart/form-data">
+    <div class="modal fade" id="editar_<?php echo $sponx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">EDITAR</h4>
+          </div>
+          <div class="modal-body">
+          <div class="form-group">
+            <label for="ejemplo_email_1">Nombre del sponsor</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $sponx['nombre']; ?>">
+          </div>
+          <!--
+          <div class="form-group">
+            <label for="ejemplo_archivo_1">Seleccionar imagen</label>
+            <input id="imagen" name="imagen" type="file" class="form-control">
+            <p class="help-block">Recuerda que la imagen se recomienda de 300x150 px.</p>
+          </div>-->
            <input type="hidden" name="id" value="<?php echo $sponx['id']; ?>">
           </div>
           <div class="modal-footer">

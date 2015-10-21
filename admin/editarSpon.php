@@ -6,23 +6,22 @@
 	global $mysqli;
 
 	$id= $_POST['id'];
-	$titulo = $_POST['titulo'];
-	$info = $_POST['info'];
+	$nombre = $_POST['nombre'];
 
 
 	//Registra el usuario
-	$query_new = mysqli_query($mysqli, "UPDATE news SET titulo='".$titulo."',info='".$info."' WHERE id='".$id."'");
+	$query_new = mysqli_query($mysqli, "UPDATE sponsors SET nombre='".$nombre."' WHERE id='".$id."'");
 
 		if ($query_new) {
 			
 			//$idalerta = '';
 			//$status = "NU";
-			header ('Location: listaNews.php');
+			header ('Location: listaSpon.php');
 			//echo "Registro existoso y se guarda el archivo";
 
 		} else {
 
-			echo "Error al desactivar";
+			echo "Error al modificar";
 
 		}
 
