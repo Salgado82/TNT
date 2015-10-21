@@ -7,9 +7,9 @@
 	$titulo = $_POST['titulo'];
 	$info = $_POST['info'];
 	$id = $_POST['id'];
-
-	//Update status
-	$query_new = mysqli_query($mysqli, "UPDATE news SET titulo='".$titulo."', info='".$info."' WHERE id='".$id."'");
+	
+	
+	$query_new = mysqli_query($mysqli, "UPDATE news SET titulo='".$titulo."',info='".$info."' WHERE id='".$id."'");
 
 
 	if ($query_new) {
@@ -18,7 +18,7 @@
 		
 	}else{
 
-		echo "Error al desactivar";
+		echo "Error al modificar";
 		
 	}
 

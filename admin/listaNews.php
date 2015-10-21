@@ -201,7 +201,7 @@ $news = obtieneNews();
 
 <?php foreach($news as $newsx):?>
     <!-- Modal -->
-  <form role="form" action="modificarNews.php" method="post" enctype="multipart/form-data">
+  <form role="form" action="editarNews.php" method="post" enctype="multipart/form-data">
     <div class="modal fade" id="editar_<?php echo $newsx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -218,11 +218,11 @@ $news = obtieneNews();
               <label for="ejemplo_password_1">Información de la noticia</label>
               <textarea class="form-control" id="info" name="info" rows="5"><?php echo $newsx['info'];?></textarea>
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
               <label for="ejemplo_archivo_1">Seleccionar imagen</label>
               <input id="imagen" name="imagen" type="file" class="form-control">
               <p class="help-block">Recuerda que la imagen se recomienda de 550x340 px.</p>
-            </div>
+            </div>-->
              <input type="hidden" name="id" value="<?php echo $newsx['id']; ?>">
           </div>
           <div class="modal-footer">
