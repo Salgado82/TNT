@@ -105,23 +105,12 @@ $news = obtieneNews();
                   </button>
                 </td>
                 <td>
-                  <?php if($newsx['status']==1){?>
-                    <label class="label label-success">Activo</label>
-                  <?php }else{ ?><label class="label label-warning">Inactivo</label><?php } ?>
+                  <label class="label label-success">Activo</label>
                 </td>
                 <td>
-                  <?php if($newsx['status']==1){?>
-                     
-                      <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#desctivar_<?php echo $newsx['id']; ?>">
-                        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-                      </button>
-                     
-                  <?php }else{ ?>
-                      <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#activar_<?php echo $newsx['id']; ?>">
-                        <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-                      </button>
-                     
-                     <?php } ?>
+                  <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#desctivar_<?php echo $newsx['id']; ?>">
+                    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                  </button>
                   <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editar_<?php echo $newsx['id']; ?>">
                   <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                   </button>  
@@ -159,10 +148,10 @@ $news = obtieneNews();
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">DESACTIVAR</h4>
+            <h4 class="modal-title" id="myModalLabel">ELIMINAR</h4>
           </div>
           <div class="modal-body">
-           ¿Desactivar la noticia?
+           ¿Seguro que desea eliminar la noticia?
            <input type="hidden" name="id" value="<?php echo $newsx['id']; ?>">
           </div>
           <div class="modal-footer">
@@ -173,30 +162,6 @@ $news = obtieneNews();
       </div>
     </div>
     </form>
-<?php endforeach;?>
-
-<?php foreach($news as $newsx):?>
-    <!-- Modal -->
-  <form role="form" action="activarNew.php" method="post" enctype="multipart/form-data">
-    <div class="modal fade" id="activar_<?php echo $newsx['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">ACTIVAR</h4>
-          </div>
-          <div class="modal-body">
-           ¿Activar la noticia?
-           <input type="hidden" name="id" value="<?php echo $newsx['id']; ?>">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Aceptar</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </form>
 <?php endforeach;?>
 
 <?php foreach($news as $newsx):?>

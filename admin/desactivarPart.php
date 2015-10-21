@@ -9,7 +9,7 @@
 
 
 	//Registra el usuario
-	$query_new = mysqli_query($mysqli, "UPDATE participantes SET estado=0 WHERE id='".$id."'");
+	$query_new = mysqli_query($mysqli, "DELETE FROM participantes WHERE id='".$id."'");
 
 		if ($query_new) {
 			
@@ -20,7 +20,7 @@
 
 		} else {
 
-			echo "Error al desactivar";
+			echo "Error al eliminar";
 
 		}
 
